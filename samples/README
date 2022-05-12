@@ -1,0 +1,11 @@
+File descriptions:
+
+sample.raw - Raw binary voltage / current data for two-channel logging.
+
+sample.csv - Several seconds of sample two-channel power data, retrieved and
+processed with run.sh.
+
+gnuplot.s - gnuplot script to build power plots (gnuplot 5.2 patchlevel 8)
+from sample.csv.
+
+pcie1.png, pcie2.png - Output plots from `gnuplot gnuplot.s`.
