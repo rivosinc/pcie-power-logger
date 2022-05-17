@@ -5,7 +5,7 @@ as recorded by an ElmorLabs PMD. Firmware continuously requests voltage +
 current readings from the PMD and stores them for later http download.
 Downloaded data can be decoded and visualized using included utilities.
 
-The firmware is based on the Zephyr project runtime and runs on a Nucleo-F767ZI board.
+The firmware is based on the [Zephyr project](https://github.com/zephyrproject-rtos/zephyr) runtime and runs on a Nucleo-F767ZI board.
 
 It currently expects to have the Zephyr v2.7 sources in `ZEPHYR_BASE`.
 
@@ -31,9 +31,9 @@ $ west build -b nucleo_f767zi -s app
 $ west flash
 ```
 
-- Ingesting and Decoding Power Data (on Linux host): See [util/run.sh](https://gitlab.ba.rivosinc.com/rv/sw/int/pcie-power-logger/-/blob/rivos/main/util/run.sh).
+- Ingesting and Decoding Power Data (on Linux host): See [util/run.sh](https://github.com/rivosinc/pcie-power-logger/blob/main/util/run.sh).
 ```
 $ ./util/run.sh (writes to output.csv)
 ```
 
-- Visualizing Data: See [samples/README](https://gitlab.ba.rivosinc.com/rv/sw/int/pcie-power-logger/-/blob/rivos/main/samples/README) for ideas.
+- Visualizing Data: See [samples/README](https://github.com/rivosinc/pcie-power-logger/blob/main/samples/README) for ideas.
