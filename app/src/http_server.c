@@ -44,7 +44,7 @@ void http_task(void)
 	CHECK(listen(serv, 5));
 
 	printf("Single-threaded dumb HTTP server waits for a connection on "
-	       "port %d...\n", BIND_PORT);
+		   "port %d...\n", BIND_PORT);
 
 	while (1) {
 		struct sockaddr_in client_addr;
@@ -53,7 +53,7 @@ void http_task(void)
 		int req_state = 0;
 
 		int client = accept(serv, (struct sockaddr *)&client_addr,
-				    &client_addr_len);
+					&client_addr_len);
 		if (client < 0) {
 			printf("Error in accept: %d - continuing\n", errno);
 			continue;
@@ -80,8 +80,7 @@ void http_task(void)
 					continue;
 				}
 
-				printf("Got error %d when receiving from "
-				       "socket\n", errno);
+				printf("Got error %d when receiving from socket\n", errno);
 				goto close_client;
 			}
 			if (req_state == 0 && c == '\r') {
@@ -123,8 +122,7 @@ close_client:
 		if (ret == 0) {
 			printf("Connection from %s closed\n", addr_str);
 		} else {
-			printf("Got error %d while closing the "
-			       "socket\n", errno);
+			printf("Got error %d while closing the socket\n", errno);
 		}
 
 	}

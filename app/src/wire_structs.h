@@ -16,9 +16,9 @@
 struct wire_data_t {
 	/* 20 bits timestamp, 12 bits raw ADC data. */
 	struct entry e;
-    /*
+	/*
 	 * PCIE1: 'I' (current) or 'V' (voltage).
-     * PCIE2: 'J' (current) or 'W' (voltage).
+	 * PCIE2: 'J' (current) or 'W' (voltage).
 	 */
 	uint8_t entry_type;
 	uint8_t reserved1;

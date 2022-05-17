@@ -37,39 +37,39 @@
 BUILD_ASSERT(INPUT_CHANNELS == 1 || INPUT_CHANNELS == 2);
 
 enum sample_t {
-    PCIE1_VOLTAGE,
-    PCIE2_VOLTAGE,
-    PCIE1_CURRENT,
-    PCIE2_CURRENT,
+	PCIE1_VOLTAGE,
+	PCIE2_VOLTAGE,
+	PCIE1_CURRENT,
+	PCIE2_CURRENT,
 };
 
 static inline enum sample_t sample_t_from_buffer_idx(index_t idx) {
-    bool voltage = (idx % VOLTAGE_IDX) == 0;
-    if (voltage) {
-        return (idx % (VOLTAGE_IDX * INPUT_CHANNELS)) == 0
-            ? PCIE1_VOLTAGE : PCIE2_VOLTAGE;
-    } else {
-        return (idx % INPUT_CHANNELS == 0) ? PCIE1_CURRENT : PCIE2_CURRENT;
-    }
+	bool voltage = (idx % VOLTAGE_IDX) == 0;
+	if (voltage) {
+		return (idx % (VOLTAGE_IDX * INPUT_CHANNELS)) == 0
+			? PCIE1_VOLTAGE : PCIE2_VOLTAGE;
+	} else {
+	return (idx % INPUT_CHANNELS == 0) ? PCIE1_CURRENT : PCIE2_CURRENT;
+	}
 }
 
 static inline uint8_t i2c_addr_from_sample_t(enum sample_t sample) {
-    switch (sample) {
-        case PCIE1_VOLTAGE: return PMD_PCIE1_VOLTAGE_I2C_CMD; break;
-        case PCIE2_VOLTAGE: return PMD_PCIE2_VOLTAGE_I2C_CMD; break;
-        case PCIE1_CURRENT: return PMD_PCIE1_CURRENT_I2C_CMD; break;
-        case PCIE2_CURRENT: return PMD_PCIE2_CURRENT_I2C_CMD; break;
-    }
+	switch (sample) {
+		case PCIE1_VOLTAGE: return PMD_PCIE1_VOLTAGE_I2C_CMD; break;
+		case PCIE2_VOLTAGE: return PMD_PCIE2_VOLTAGE_I2C_CMD; break;
+		case PCIE1_CURRENT: return PMD_PCIE1_CURRENT_I2C_CMD; break;
+		case PCIE2_CURRENT: return PMD_PCIE2_CURRENT_I2C_CMD; break;
+	}
 	return 0;
 }
 
 static inline char char_from_sample_t(enum sample_t sample) {
-    switch (sample) {
-        case PCIE1_VOLTAGE: return 'V'; break;
-        case PCIE2_VOLTAGE: return 'W'; break;
-        case PCIE1_CURRENT: return 'I'; break;
-        case PCIE2_CURRENT: return 'J'; break;
-    }
+	switch (sample) {
+		case PCIE1_VOLTAGE: return 'V'; break;
+		case PCIE2_VOLTAGE: return 'W'; break;
+		case PCIE1_CURRENT: return 'I'; break;
+		case PCIE2_CURRENT: return 'J'; break;
+	}
 	return 0;
 }
 
