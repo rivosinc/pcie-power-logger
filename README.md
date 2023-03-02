@@ -1,4 +1,12 @@
+<!--
+SPDX-FileCopyrightText: 2023 Rivos Inc.
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
 # PCIe Power Logger
+
+[![REUSE status](https://api.reuse.software/badge/github.com/rivosinc/pcie-power-logger)](https://api.reuse.software/info/github.com/rivosinc/pcie-power-logger)
 
 This project provides firmware and tools for logging PCIe power consumption
 as recorded by an ElmorLabs PMD. Firmware continuously requests voltage +

@@ -1,10 +1,8 @@
 #!/usr/bin/perl
 
-#
-# Copyright (c) 2022 Rivos Inc.
+# SPDX-FileCopyrightText: 2023 Rivos Inc.
 #
 # SPDX-License-Identifier: Apache-2.0
-#
 
 # Script to unpack binary data sample format to CSV.
 # Input (stdin) is binary data consisting of raw volage / current samples read

@@ -1,10 +1,8 @@
 #!/usr/bin/sh
 
-#
-# Copyright (c) 2022 Rivos Inc.
+# SPDX-FileCopyrightText: 2023 Rivos Inc.
 #
 # SPDX-License-Identifier: Apache-2.0
-#
 
 # Script to repeatedly retrieve sample data from host and pipe through
 # unpack_power.pl to create a single contiguous CSV output file consisting of
