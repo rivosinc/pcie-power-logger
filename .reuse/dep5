@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pcie-power-logger
+Upstream-Contact: Rivos Inc. <>
+Source: https://github.com/rivosinc/pcie-power-logger
+
+# Sample binary files
+Files: samples/*.png samples/*.raw samples/*.csv
+Copyright: 2023 Rivos Inc.
+License: Apache-2.0
