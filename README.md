@@ -15,7 +15,7 @@ Downloaded data can be decoded and visualized using included utilities.
 
 The firmware is based on the [Zephyr project](https://github.com/zephyrproject-rtos/zephyr) runtime and runs on a Nucleo-F767ZI board.
 
-It currently expects to have the Zephyr v2.7 sources in `ZEPHYR_BASE`.
+It currently expects to have the Zephyr v3.3 sources in `ZEPHYR_BASE`.
 
 ## Hardware Requirements
 - [STM Nucleo-F767ZI board](https://www.st.com/en/evaluation-tools/nucleo-f767zi.html). Other Zephyr-supported MCU boards should work with minimal tweaks.
