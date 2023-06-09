@@ -55,10 +55,10 @@ static inline enum sample_t sample_t_from_buffer_idx(index_t idx) {
 
 static inline uint8_t i2c_addr_from_sample_t(enum sample_t sample) {
 	switch (sample) {
-		case PCIE1_VOLTAGE: return PMD_PCIE1_VOLTAGE_I2C_CMD; break;
-		case PCIE2_VOLTAGE: return PMD_PCIE2_VOLTAGE_I2C_CMD; break;
-		case PCIE1_CURRENT: return PMD_PCIE1_CURRENT_I2C_CMD; break;
-		case PCIE2_CURRENT: return PMD_PCIE2_CURRENT_I2C_CMD; break;
+		case PCIE1_VOLTAGE: return PMD_PCIE1_VOLTAGE_ALT_I2C_CMD; break;
+		case PCIE2_VOLTAGE: return PMD_PCIE2_VOLTAGE_ALT_I2C_CMD; break;
+		case PCIE1_CURRENT: return PMD_PCIE1_CURRENT_ALT_I2C_CMD; break;
+		case PCIE2_CURRENT: return PMD_PCIE2_CURRENT_ALT_I2C_CMD; break;
 	}
 	return 0;
 }
