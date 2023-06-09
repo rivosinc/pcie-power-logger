@@ -10,7 +10,7 @@
  * only be called by Thread A, pop_buffer must only be called by Thread B, and
  * the loads + stores must be atomic.
  */
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 #include "ringbuffer.h"
 

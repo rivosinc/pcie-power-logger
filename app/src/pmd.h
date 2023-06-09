@@ -8,7 +8,7 @@
 #ifndef __PMD_H__
 #define __PMD_H__
 
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 #define PMD_I2C_ADDR 0x12
 

@@ -9,7 +9,7 @@
 #ifndef __WIRE_STRUCTS_H__
 #define __WIRE_STRUCTS_H__
 
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 #include "ringbuffer.h"
 

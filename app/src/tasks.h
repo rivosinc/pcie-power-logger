@@ -10,7 +10,7 @@
 #include "pmd.h"
 #include "ringbuffer.h"
 
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 #define STACK_SIZE 1024
 

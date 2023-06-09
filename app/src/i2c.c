@@ -9,10 +9,11 @@
  * measurement data from the PMD device and stuffs the data into a circular
  * buffer.
  */
-#include <device.h>
-#include <drivers/i2c.h>
+#include <zephyr/drivers/i2c.h>
+
 #include <stdio.h>
-#include <zephyr.h>
+#include <zephyr/device.h>
+#include <zephyr/kernel.h>
 
 #include "ringbuffer.h"
 #include "pmd.h"
