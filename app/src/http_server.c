@@ -13,10 +13,9 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#include <net/socket.h>
-#include <kernel.h>
-
-#include <net/net_pkt.h>
+#include <zephyr/kernel.h>
+#include <zephyr/net/net_pkt.h>
+#include <zephyr/net/socket.h>
 
 #include "ringbuffer.h"
 #include "tasks.h"

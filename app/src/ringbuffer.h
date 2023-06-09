@@ -7,7 +7,7 @@
 #ifndef __RINGBUFFER_H__
 #define __RINGBUFFER_H__
 
-#include <zephyr.h>
+#include <zephyr/kernel.h>
 
 /*
  * Entry data is stored in ringbuffer and sent directly on the wire. Embedded
