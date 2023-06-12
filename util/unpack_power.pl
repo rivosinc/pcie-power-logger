@@ -62,7 +62,9 @@ while (my $bytes_read = read(STDIN, my $buffer, 8)) {
 		$timestamp = 0;
 	}
 
-	if ($entry_type == ord("V")) {
+	if ($entry_type == ord("T")) {
+		# TODO: Implement timestamp clock sync.
+	} elsif ($entry_type == ord("V")) {
 		$last_mv1 = $adc_data * 7.568;
 	} elsif ($entry_type == ord("W")) {
 		$last_mv2 = $adc_data * 7.568;

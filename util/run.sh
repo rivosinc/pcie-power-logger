@@ -12,7 +12,7 @@ CURL_CMD="curl --http0.9 --no-progress-meter"
 UNPACK_POWER_CMD="./unpack_power.pl --print_restore_params "
 
 OUTFILE="./output.csv"
-HOST="192.0.2.1:8080"
+HOST="192.168.1.150:8080"
 
 while getopts "o:h:d" option; do
 case ${option} in
