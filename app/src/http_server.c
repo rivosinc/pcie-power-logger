@@ -14,6 +14,7 @@
 #include <errno.h>
 
 #include <zephyr/kernel.h>
+#include <zephyr/net/net_config.h>
 #include <zephyr/net/net_pkt.h>
 #include <zephyr/net/socket.h>
 
@@ -31,6 +32,10 @@ void http_task(void)
 	struct sockaddr_in bind_addr;
 	static int counter;
 	int ret;
+
+	do {
+		ret = net_config_init_app(NULL, "Initializing network");
+	} while (ret < 0);
 
 	serv = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 	CHECK(serv);
