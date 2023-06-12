@@ -100,9 +100,13 @@ void http_task(void)
 			}
 		}
 
+		struct wire_data_t wire_data;
+		wire_data.entry_type = 'T';
+		wire_data.reserved1 = wire_data.reserved2 = wire_data.reserved3 = 0;
+		wire_data.e.bits = (uint32_t)k_uptime_ticks();
+		send(client, &wire_data, sizeof(wire_data), 0);
+
 		while (1) {
-			struct wire_data_t wire_data;
-			wire_data.reserved1 = wire_data.reserved2 = wire_data.reserved3 = 0;
 			const int tx_buf_size = 128;
 			struct wire_data_t tx_buf[tx_buf_size];
 			int buffered_cnt = 0;
