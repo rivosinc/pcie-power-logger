@@ -29,6 +29,21 @@ my $timestamp_overflow_count = 0;
 
 my $print_restore_params = 0;
 
+# PCIe2 port on PMD-USB is observed to consistently underreport current.
+# Taking data points from a fixed load on various currents 1A - 21A @ 12V,
+# actual current can be approximated from PMD observed current as:
+# Actual_W = Observed_W * 1.107 + 5.14
+sub WattsFromPCIe2ObservedWatts {
+	my ($observed) = @_;
+	# PMD does not accurately measure currents approaching zero, just
+	# provide raw value.
+	return $observed if $observed < 5.0;
+
+	my $slope = 1.107;
+	my $offset = 5.14;
+	return $observed * $slope + $offset;
+}
+
 # --print_restore_params_to_stderr: If enabled, when the script exits,
 # arguments are printed to stderr that can be passed to the script on a
 # subsequent invocation when handling data that is contigous.
@@ -76,8 +91,9 @@ while (my $bytes_read = read(STDIN, my $buffer, 8)) {
 	} elsif ($entry_type == ord("J")) {
 		$adc_data = 0 if ($adc_data & 0x800);
 		my $ma = $adc_data * 48.8;
-		print "PCIE2, $timestamp, " . ($last_mv2 * $ma / 1000000) . "\n"
-			if defined $last_mv2;
+		print "PCIE2, $timestamp, " .
+			(WattsFromPCIe2ObservedWatts($last_mv2 * $ma / 1000000)) .
+			"\n" if defined $last_mv2;
 	} else {
 		print STDERR "Invalid entry_type " . $entry_type;
 	}
