@@ -7,3 +7,8 @@ Source: https://github.com/rivosinc/pcie-power-logger
 Files: samples/*.png samples/*.raw samples/*.csv
 Copyright: 2023 Rivos Inc.
 License: Apache-2.0
+
+# Facebook required files from template
+Files: CODE_OF_CONDUCT.md CONTRIBUTING.md
+Copyright: 2026 Meta Platforms, Inc. and affiliates.
+License: Apache-2.0
